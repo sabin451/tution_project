@@ -1,0 +1,29 @@
+{% extends 'adminnav.html' %}
+{% block content %}
+<div class="table table-responsive">
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>BATCH</th>
+                <th>COURSE</th>
+                <th>COURSE DURATION</th>
+                <th>DEPARTMENT</th>
+                <th>STUDENT</th>
+                <th>TEACHER</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in key %}
+            <tr>
+                <td>{{i.batchid.batch}}</td>
+                <td>{{i.courseid.course_name}}</td>
+                <td>{{i.courseid.course_duration}}</td>
+                <td>{{i.departmentid.department}}</td>
+                <td>{{i.studentid.firstname}}</td>
+                <td>{{i.teacherid.firstname}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'adminnav.html' %}
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px 0px;
+        text-align: center;
+    }
+
+    th {
+        background-color: grey;
+        color: white;
+    }
+
+    td {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .action-links {
+        white-space: nowrap;
+    }
+
+    .action-links a {
+        margin: 0 1px;
+    }
+
+    a.edit-link,
+    a.delete-link {
+        text-decoration: none;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    a.edit-link {
+        color: green;
+    }
+
+    a.delete-link {
+        color: red;
+    }
+
+    a.edit-link:hover {
+        color: white;
+        background-color: green;
+    }
+
+    a.delete-link:hover {
+        color: white;
+        background-color: red;
+    }
+</style>
+<div class="table-responsive">
+    <h1>Course Details - {{ selected_course.course_name }}</h1>
+    <table class="" style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Teachers</th>
+                <th>Students</th>
+            </tr>
+        </thead>
+        <tbody class=" ">
+            <tr>
+                <td>
+                    <ul>
+                        {% for teacher in teachers %}
+                            <li>{{ teacher.firstname }} {{ teacher.lastname }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        {% for student in students %}
+                            <li>{{ student.firstname }} {{ student.lastname }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

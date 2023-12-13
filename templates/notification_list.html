@@ -1,0 +1,47 @@
+{% extends 'adminnav.html' %}
+{% block content %}
+<div class="container">
+    <h2>Notifications</h2>
+    <ul class="notification-list">
+        {% for notification in notifications %}
+            <li class="notification-item">
+                <div class="notification-info">
+                    <strong>{{ notification.name }}</strong> has requested approval.
+                </div>
+                <div class="notification-actions">
+                    <a href="{% url 'viewuser' %}" class="btn btn-primary">Approve</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<style>
+    .notification-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notification-item {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        margin: 10px 0;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .notification-info {
+        flex: 1;
+    }
+
+    .notification-actions {
+        margin-left: 10px;
+    }
+
+    .notification-actions a {
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
+{% endblock %}

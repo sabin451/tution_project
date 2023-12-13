@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>Tution Center</title>
+
+    <!-- Bootstrap -->
+    <link href="static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- NProgress -->
+    <link href="static/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="static/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="{% url 'studenthome' %}" class="site_title"><i class="fa fa-paw"></i> <span>Student Page</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="https://cdn-icons-png.flaticon.com/128/4297/4297861.png" width="70px" height="70px">
+              </div>
+              <div class="profile_info">
+                <h2>Welcome Student</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a href="{% url 'studentpage' %}"><i class="fa fa-file-text"></i> Assignment <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'stattendanceview' %}"><i class="fa-solid fa-user-check"></i> &nbsp;&nbsp;&nbsp;Attendance <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'studentprofile' %}"><i class="fa-solid fa-circle-user"></i> &nbsp;&nbsp;&nbsp;View Profile <span class="fa fa-chevron"></span></a>
+                  </li>
+                 <li><a href="{% url 'student_course' %}">&nbsp;<i class="fa-solid fa-book-open-reader"></i>&nbsp;&nbsp;&nbsp;Course <span class="fa fa-chevron"></span></a>
+                  <ion-icon name="home-outline"></ion-icon>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3></h3>
+                <ul class="nav side-menu">
+                  <li><a><i class=""></i> <span class=""></span></a>
+                  </li>
+                  <li><a><i class=""></i>  <span class=""></span></a>
+                    <ul class="nav child_menu">
+                    </ul>
+                  </li>
+                  <li><a><i class=""></i><span class=""></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1"></a>
+                        <li><a>Level One<span class=""></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
+                        </li>
+                    </ul>
+                  </li>                  
+                  <li><a href="javascript:void(0)"><i class=""></i> <span class="label label-success pull-right"></span></a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <nav class="nav navbar-nav">
+              <ul class=" navbar-right">
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3153/3153024.png " alt="">Student
+                  </a>
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item"  href="https://support.google.com/">Help</a>
+                  <a class="dropdown-item"  href="{% url 'resetpassword1' %}">Reset Password</a>
+                    <a class="dropdown-item"  href="{% url 'logout' %}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </div>
+                </li>
+                    
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          
+          <div class="row" style="display: inline-block;" >
+          <div class="tile_count">
+            <div class="container-link">
+              {% for message in messages %}
+              <h5>
+                <div class="alert alert-success " style="text-align:left;">
+                    {{ message }}
+                </div>
+            </h5>
+                {% endfor %} 
+           
+          <!-- /top tiles -->
+
+         
+                <!-- End to do list -->
+                
+                <!-- start of weather widget -->
+
+                <!-- <style>
+                  .profile-picture {
+                  width: 100px; /* Set the desired width */
+                  height: 100px; /* Set the desired height */
+                  object-fit: cover; /* This is optional to ensure the image covers the entire space */
+                  border-radius: 50%; /* Optional: To round the corners for a circular profile picture */
+                  
+                }
+                .form-group{
+                  padding-left: 100px;
+                }
+                .form-control{
+                  padding-left: 100px;
+                }
+                
+                </style>
+                 <div class="container">
+                  {% for message in messages %}
+                  <h5>
+                    <div class="alert alert-success " style="text-align:left;">
+                        {{ message }}
+                    </div>
+                </h5>
+                    {% endfor %} 
+                    <form class="mx-lg-auto d-block " style="margin-top:50px;" action="{% url 'studentupdate' %}" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      
+                      <div class="form-group">
+                        <h3 style="text-align: center; " class="bg-warning">UPDATE</h3>
+
+                        <input type="text" name="username" placeholder="user" class="form-control"  value="{{data.username}}">
+                      </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" name="fname" placeholder="FIRST NAME" class="form-control"  value="{{data.first_name}}">
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="lname" placeholder="LAST NAME" class="form-control"  value="{{data.last_name}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="number" name="age" placeholder="age" class="form-control"  value="{{data2.age}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="contact" placeholder="contact number" class="form-control"  value="{{data2.contact}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="email" name="email" placeholder="email id"  class="form-control" value="{{data.email}}">
+                        </div>
+                
+                        <div class="form-group">
+                          <img src="{{data2.image.url}}" class="profile-picture">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="text-light">New Profile Picture</label>
+                          <input type="file" name="image"  class="form-control">
+                        </div>
+                           <button type="submit" class="btn btn-primary form-control">UPDATE</button>
+                    </form>
+                 </div> -->
+                 <style>
+                  body{
+                    text-align: center;
+                  }
+                  .profile-picture {
+                  width: 100px; /* Set the desired width */
+                  height: 100px; /* Set the desired height */
+                  object-fit: cover; /* This is optional to ensure the image covers the entire space */
+                  border-radius: 50%; /* Optional: To round the corners for a circular profile picture */
+                }
+                
+                </style>
+                 <div class="container">
+                  {% for message in messages %}
+                  <h5>
+                    <div class="alert alert-success " style="text-align:left;">
+                        {{ message }}
+                    </div>
+                </h5>
+                    {% endfor %} 
+                    <form class="mx-lg-auto d-block " style="margin-top:50px;" action="{% url 'studentupdate' %}" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <h3 style="text-align: center; color: aliceblue;" class="bg-secondary">UPDATE</h3>
+                      <div class="form-group">
+                        <input type="text" name="username" placeholder="user" class="form-control"  value="{{data.username}}">
+                      </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" name="fname" placeholder="FIRST NAME" class="form-control"  value="{{data.first_name}}">
+                                </div>
+                                <div class="col">
+                                    <input type="text" name="lname" placeholder="LAST NAME" class="form-control"  value="{{data.last_name}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="number" name="age" placeholder="age" class="form-control"  value="{{data2.age}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="contact" placeholder="contact number" class="form-control"  value="{{data2.contact}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="email" name="email" placeholder="email id"  class="form-control" value="{{data.email}}">
+                        </div>
+                        <div class="form-group">
+                          <img src="{{data2.image.url}}" class="profile-picture">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label class="text-light">New Profile Picture</label>
+                          <input type="file" name="image"  class="form-control">
+                        </div>
+                           <button type="submit" class="btn btn-primary form-control">UPDATE</button>
+                    </form>
+                 </div>
+                <!-- end of weather widget -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+       
+        <!-- /footer content -->
+      </div>
+    </div>
+  </div>
+
+    <!-- jQuery -->
+    <script src="static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="static/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="static/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="static/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="static/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="static/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="static/vendors/Flot/jquery.flot.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="static/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="static/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="static/vendors/moment/min/moment.min.js"></script>
+    <script src="static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="static/build/js/custom.min.js"></script>
+	
+  </body>
+</html>
+
+

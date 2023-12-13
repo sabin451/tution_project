@@ -1,0 +1,26 @@
+{% extends 'teachernav.html' %}
+{% block content %}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Attendance</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for i in data %}
+           {% if i.courseid.id == data2.id %}
+            <tr>
+                <td>{{i.userid.first_name}}</td>
+                <td>{{i.courseid.course_name}}</td>
+                <td><a href="{% url 'present' i.id %}" ><button type="button" class="btn btn-primary">Present</button></a> <a href="{% url 'absent' i.id %}"><button type="button" class="btn btn-danger">Absent</button></a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

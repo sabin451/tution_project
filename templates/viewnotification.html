@@ -1,0 +1,27 @@
+{% extends 'teachernav.html' %}
+{% block content %}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>MESSAGE</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for notification in notifications %}
+                    <tr>
+                        <td>{{ notification.messge }}</td>
+                        <td>
+                            <a href="{% url 'markview' notification.id %}">
+                                <button class="btn btn-primary">MARK AS READ</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

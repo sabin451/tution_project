@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>Tution Center</title>
+
+    <!-- Bootstrap -->
+    <link href="static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- NProgress -->
+    <link href="static/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="static/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="{% url 'adminhome' %}" class="site_title"><i class="fa fa-paw"></i> <span>Admin Page</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="data:image/jpeg;base64,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" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <h2>Welcome Admin</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a href="{% url 'addcourse' %}"><i class="fa fa-book"></i> Add Course <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'managecourse' %}"><i class="fa fa-list-ul"></i> Manage Course <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'department' %}"><i class="fa fa-building"></i> Add Department <span class="fa fa-chevron"></span></a>
+                  </li>
+                 <li><a href="{% url 'teacherattendanceview' %}">&nbsp;<i class="fa fa-check-square-o" ></i> Mark Teachers Attendance <span class="fa fa-chevron"></span></a>
+                  <ion-icon name="home-outline"></ion-icon>
+                  </li>
+                  <li><a href="{% url 'viewuser' %}"><i class="fa fa-gavel"></i> Approve and Disapprove <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'assign_teacher' %}"><i class="fa fa-sitemap"></i> Assign Teachers <span class="fa fa-chevron"></span></a>
+
+                  </li>
+                  <li><a href="{% url 'assign_student' %}"><i class="fa fa-user-plus"></i> Assign Student <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'teacherdetails' %}"><i class="fa fa-chalkboard-user"></i>Teacher Record <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'studentdetails' %}"><i class="fa fa-address-book"></i>Student Record <span class="fa fa-chevron"></span></a>
+                  </li>
+                  <li><a href="{% url 'adminstudentattendance' %}"><i class="fa fa-users"></i>View Student Attendance <span class="fa fa-chevron"></span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3></h3>
+                <ul class="nav side-menu">
+                  <li><a><i class=""></i> <span class=""></span></a>
+                  </li>
+                  <li><a><i class=""></i>  <span class=""></span></a>
+                    <ul class="nav child_menu">
+                    </ul>
+                  </li>
+                  <li><a><i class=""></i><span class=""></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#level1_1"></a>
+                        <li><a>Level One<span class=""></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="level2.html">Level Two</a>
+                            </li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="#level1_2">Level One</a>
+                        </li>
+                    </ul>
+                  </li>                  
+                  <li><a href="javascript:void(0)"><i class=""></i> <span class="label label-success pull-right"></span></a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+           
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+        
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <nav class="nav navbar-nav">
+              <ul class=" navbar-right">
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                    <img src="https://cdn-icons-png.flaticon.com/128/6024/6024190.png" alt="">Admin
+                  </a>
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item"  href="https://support.google.com/">Help</a>
+                    <a class="dropdown-item"  href="{% url 'logout' %}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </div>
+                </li>
+
+                <li role="presentation" class="nav-item dropdown open">
+                  <li class="nav-item {% if request.path == 'notification_list' %}active{% endif %}">
+                    <a href="{% url 'notification_list' %}">
+                    <img src="https://cdn-icons-png.flaticon.com/128/10828/10828727.png" height="30px" width="30px"></img>
+                    {% if notification_count > 0 %}
+                    <span class="badge badge-danger">{{ notification_count }}</span>
+                    {% endif %}
+                  </a>
+                 
+                    </li>
+                    
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          
+                <!-- End to do list -->
+                
+                <!-- start of weather widget -->
+
+                <h1 style="text-align: center; color: darkslateblue"><b>Approve and Disapprove</b></h1>
+                <div class="container" style="margin-top: 2%;">
+                  {% for message in messages %}
+                        <div class="alert alert-success" style="text-align: left;">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead style="background-color: gray;">
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>USER</th>
+                                    <th>EMAIL</th>
+                                    <th>PROFILE PICTURE</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in data %}
+                                <tr>
+                                    <td>{{i.name}}</td>
+                                    <td>{% if i.usertype == 2 %}TEACHER{% endif %}{% if i.usertype == 3 %}STUDENT{% endif %}</td>
+                                    <td>{{i.email}}</td>
+                                    <td><img src='{{i.image.url}}' style="border: 1px solid orange; border-radius: 35px; width: 45px; height: 45px;" id="profile"></td>
+                                    <td>
+                                        {% if i.status == 1 %}
+                                            <a href="{% url 'approve' i.userid.id %}" class="btn btn-primary">APPROVE</a>
+                                            <a href="{% url 'disapprove' i.userid.id %}" class="btn btn-danger">DISAPPROVE</a>
+                                        {% endif %}
+                                        {% if i.status == 2 %}
+                                            <button type="button" class="btn btn-primary" disabled>APPROVED</button>
+                                        {% endif %}
+                                        {% if i.status == 0 %}
+                                            <button type="button" class="btn btn-danger" disabled>DISAPPROVED</button>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end of weather widget -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Tution Project - Bootstrap Admin Template 
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  </div>
+  
+
+    <!-- jQuery -->
+    <script src="static/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="static/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="static/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="static/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="static/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="static/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="static/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="static/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="static/vendors/Flot/jquery.flot.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="static/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="static/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="static/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="static/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="static/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="static/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="static/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="static/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="static/vendors/moment/min/moment.min.js"></script>
+    <script src="static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="static/build/js/custom.min.js"></script>
+	
+  </body>
+</html>
+

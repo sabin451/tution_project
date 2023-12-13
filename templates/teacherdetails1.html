@@ -1,0 +1,33 @@
+{% extends 'teachernav.html' %}
+{% block content %}
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+               
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Profile</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{i.firstname}} {{i.lastname}}</td>
+       
+                    <td>{{i.age}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.contact}}</td>
+                    <td><img src='{{i.image.url}}' style="border:1px solid ; border-radius:35px; width:45px; height:45px; " id="profile" ></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
